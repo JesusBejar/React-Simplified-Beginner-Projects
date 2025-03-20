@@ -1,7 +1,8 @@
-import "./user.css"
-import user from "./user.json"
-import { UserCard } from "./UserCard"
-import { UserCardClass } from "./UserCardClass"
+import "./user.css";
+import user from "./user.json";
+import { UserCard } from "./UserCard";
+import { UserCardClass } from "./UserCardClass";
+import { Counter } from "./Counter";
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
         age={user.age}
         address={user.address}
       />
+
+      <Counter />
     </div>
-  )
+  );
 }

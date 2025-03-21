@@ -40,6 +40,25 @@ function App() {
     setArray(INITIAL_VALUE);
   }
 
+  function aToH() {
+    setArray((currentArray) => {
+      return currentArray.map((element) => {
+        if (element === "A") return "H";
+        return element;
+      });
+    });
+  }
+
+  function addLetterAtIndex(letter, index) {
+    setArray((currentArray) => {
+      return [
+        ...currentArray.slice(0, index),
+        letter,
+        ...currentArray.slice(index),
+      ];
+    });
+  }
+
   return (
     <div>
       <button onClick={removeFirstElement}>Remove first elemment</button>
@@ -53,7 +72,19 @@ function App() {
       <button onClick={clear}>Clear</button>
       <br />
       <button onClick={reset}>Reset</button>
-
+      <br />
+      <button onClick={aToH}>Update A to H</button>
+      <br />
+      <input
+        value={value}
+        onChange={(element) => setValue(element.target.value)}
+      />
+      <button onClick={() => addLetterToStart(value)}>
+        Add input to array
+      </button>
+      <br />
+      <button onClick={() => addLetterAtIndex("Z", 2)}>Add Z to index 2</button>
+      <br />
       {array.join(", ")}
     </div>
   );

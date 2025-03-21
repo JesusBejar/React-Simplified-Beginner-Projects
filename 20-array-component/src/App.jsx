@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// don't be afraid to put static values outside of components
 const INITIAL_VALUE = ["A", "B", "C"];
 
 function App() {
@@ -31,6 +32,14 @@ function App() {
     });
   }
 
+  function clear() {
+    setArray([]);
+  }
+
+  function reset() {
+    setArray(INITIAL_VALUE);
+  }
+
   return (
     <div>
       <button onClick={removeFirstElement}>Remove first elemment</button>
@@ -40,6 +49,10 @@ function App() {
       <button onClick={() => addLetterToStart("B")}>Add B to beginning</button>
       <br />
       <button onClick={() => addLetterToEnd("A")}>Add A to end</button>
+      <br />
+      <button onClick={clear}>Clear</button>
+      <br />
+      <button onClick={reset}>Reset</button>
 
       {array.join(", ")}
     </div>

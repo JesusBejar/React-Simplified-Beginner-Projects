@@ -1,20 +1,20 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export function FunctionComponent() {
-  const [name, setName] = useState("")
-  const [age, setAge] = useState(0)
+  const [name, setName] = setName("");
+  const [age, setAge] = setAge(0);
 
   return (
     <div>
-      <input value={name} onChange={e => setName(e.target.value)} />
+      <input value={name} onChange={(elment) => setName(elment.target.value)} />
       <br />
       <br />
-      <button onClick={() => setAge(currentAge => currentAge - 1)}>-</button>
+      <button onClick={() => setAge((currentAge) => currentAge - 1)}>-</button>
       {age}
-      <button onClick={() => setAge(currentAge => currentAge + 1)}>+</button>
+      <button onClick={() => setAge((currentAge) => currentAge + 1)}>+</button>
       <br />
       <br />
-      My name is {name} and I am {age} years old.
+      My name is {name} and my age is {age}
     </div>
-  )
+  );
 }

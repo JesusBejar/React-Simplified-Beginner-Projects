@@ -4,10 +4,6 @@ import { Child } from "./Child";
 export default function App() {
   const [show, setShow] = useState(true);
 
-  useEffect(() => {
-    console.log("Hi - mounted");
-  }, [show]);
-
   const childComponent = show ? <Child /> : null;
 
   return (

@@ -11,8 +11,18 @@ export function Child() {
 
   // on mount
   useEffect(() => {
-    console.log("**Render**");
+    console.log("**Hi**");
   }, []);
+
+  // logs age and name
+  useEffect(() => {
+    console.log(`My age ${age} and name ${name}`);
+  }, [name, age]);
+
+  // updates tab name with input
+  useEffect(() => {
+    document.title = name;
+  }, [name]);
 
   return (
     <div>
